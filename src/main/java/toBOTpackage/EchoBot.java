@@ -13,16 +13,20 @@ public class EchoBot extends TelegramLongPollingBot {
  
 		// Se obtiene el mensaje escrito por el usuario
 		final String messageTextReceived = update.getMessage().getText();
+                String welcomeText = "Welcome! Again...";
  
 		// Se obtiene el id de chat del usuario
 		final long chatId = update.getMessage().getChatId();
  
 		// Se crea un objeto mensaje
 		SendMessage message = new SendMessage().setChatId(chatId).setText(messageTextReceived);
-		
+                SendMessage welcomeMessage = new SendMessage().setChatId(chatId).setText(welcomeText);		
+
+
 		try {
 			// Se envía el mensaje
 			execute(message);
+                        execute(welcomeMessage);
 		} catch (TelegramApiException e) {
 			e.printStackTrace();
 		}
@@ -31,7 +35,7 @@ public class EchoBot extends TelegramLongPollingBot {
 	@Override
 	public String getBotUsername() {
 		// Se devuelve el nombre que dimos al bot al crearlo con el BotFather
-		return "EchoBot";
+		return "JavaBot";
 	}
  
 	@Override

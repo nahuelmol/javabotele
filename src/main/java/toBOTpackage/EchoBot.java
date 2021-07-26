@@ -29,12 +29,9 @@ public class EchoBot extends TelegramLongPollingBot {
  
 	@Override
 	public String getBotUsername() {
-<<<<<<< HEAD
 		return "EchoBot";
-=======
 		// Se devuelve el nombre que dimos al bot al crearlo con el BotFather
 		return "JavaBot";
->>>>>>> 2ef8e70bd5dbf390a7631540c17b4ecc8e3e1997
 	}
  
 	@Override
